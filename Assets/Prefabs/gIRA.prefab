@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2472666832590586287}
   - component: {fileID: 5960593633690361626}
   - component: {fileID: 2692696053642341601}
+  - component: {fileID: -7910009435881206969}
   m_Layer: 0
   m_Name: gIRA
   m_TagString: Untagged
@@ -94,7 +95,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4129889996500656250}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.09389314
   m_Height: 0.18778628
@@ -116,3 +117,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
+--- !u!114 &-7910009435881206969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4129889996500656250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de2791a97c2ee244953011e49939bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
