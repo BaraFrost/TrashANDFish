@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -11,15 +12,17 @@ public class Score : MonoBehaviour
     private GameObject player;
     private void Start()
     {
-        score = 5;
+        score = 0;
     }
     void Update()
     {
-       
-       scoreText.text = "CSORE = " + score;
-       if(score == 0)
+
+        scoreText.text = "SCORE = " + score;
+        if (score < 0)
         {
-            Destroy(player);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //Destroy(player);
         }
     }
 }
+

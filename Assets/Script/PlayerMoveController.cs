@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class PlayerMoveController : MonoBehaviour {
+public class PlayerMoveController : MonoBehaviour
+{
     private Rigidbody rb;
     public float speed = 0.5f;
     private Vector3 moveVector;
@@ -22,32 +23,47 @@ public class PlayerMoveController : MonoBehaviour {
     [SerializeField]
     private float _minVelocity;
 
-    void Awake() {
+    [SerializeField]
+    private AnimationCurve _joysticSpeedCurve;
+
+    void Awake()
+    {
         rb = GetComponent<Rigidbody>();
     }
-
-    private void MoveWithMouseInput() {
+    private void MoveWithMouseInput()
+    {
         _joystick.gameObject.SetActive(false);
         var mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
             Camera.main.WorldToScreenPoint(gameObject.transform.position).z));
         var input = mousePosition - transform.position;
         input.z = 0;
-        if (input.magnitude <= _mouseInputDeadZoneRadius) {
+        if (input.magnitude <= _mouseInputDeadZoneRadius)
+        {
             moveVector = Vector3.zero;
-        } else {
+        }
+        else
+        {
             moveVector = input.normalized;
         }
     }
 
-    private void MoveWithJoysticInput() {
+    private void MoveWithJoysticInput()
+    {
         _joystick.gameObject.SetActive(true);
         float moveX = _joystick.Horizontal;
         float moveY = _joystick.Vertical;
-        moveVector = new Vector3(moveX, moveY, 0);
+        moveVector = EvaluateJoysticVector(new Vector3(moveX, moveY, 0));
     }
 
-    private void Move() {
-        if (moveVector.magnitude == 0) {
+    private Vector3 EvaluateJoysticVector(Vector3 value)
+    {
+        return _joysticSpeedCurve.Evaluate(value.magnitude) * value;
+    }
+
+    private void Move()
+    {
+        if (moveVector.magnitude == 0)
+        {
             Break();
             return;
         }
@@ -56,26 +72,35 @@ public class PlayerMoveController : MonoBehaviour {
         rb.velocity = moveVector * speed;
     }
 
-    private void Break() {
-        rb.velocity = new Vector3(CalculateFloatBreakVelocity(rb.velocity.x), CalculateFloatBreakVelocity(rb.velocity.y), 0);
+    private void Break()
+    {
+        rb.velocity = new Vector3(CalculateFloatBreakVelocity(rb.velocity.x),
+            CalculateFloatBreakVelocity(rb.velocity.y), 0);
     }
 
-    private float CalculateFloatBreakVelocity(float value) {
-        if (Mathf.Abs(value) <= _minVelocity) {
+    private float CalculateFloatBreakVelocity(float value)
+    {
+        if (Mathf.Abs(value) <= _minVelocity)
+        {
             return 0;
         }
         return value * _breakAcceleration;
     }
 
-    void Update() {
-        if (_useJoystic) {
+    void Update()
+    {
+        if (_useJoystic)
+        {
             MoveWithJoysticInput();
-        } else {
+        }
+        else
+        {
             MoveWithMouseInput();
         }
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         Move();
     }
 }
