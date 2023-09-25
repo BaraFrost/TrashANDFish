@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2929443286379878058}
   - component: {fileID: 7898408685607724203}
   m_Layer: 0
-  m_Name: tor
+  m_Name: Donut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

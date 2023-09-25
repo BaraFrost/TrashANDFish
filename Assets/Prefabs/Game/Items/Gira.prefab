@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2692696053642341601}
   - component: {fileID: -7910009435881206969}
   m_Layer: 0
-  m_Name: gIRA
+  m_Name: Gira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
