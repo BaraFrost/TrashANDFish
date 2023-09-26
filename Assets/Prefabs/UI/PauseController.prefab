@@ -268,6 +268,7 @@ MonoBehaviour:
   _resumeButton: {fileID: 6230862266382139517}
   _restartButton: {fileID: 6230862268128959030}
   _menuButton: {fileID: 6230862268147604252}
+  _scenes: {fileID: 11400000, guid: d241f733092cb4a4bb5f3c8bccdc1589, type: 2}
 --- !u!1 &6230862267780519210
 GameObject:
   m_ObjectHideFlags: 0

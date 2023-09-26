@@ -1,5 +1,5 @@
+using Data;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour
@@ -15,9 +15,9 @@ public class PauseController : MonoBehaviour
     private Button _restartButton;
     [SerializeField]
     private Button _menuButton;
-    private void Awake()
-    {
-    }
+
+    [SerializeField]
+    private ScenesContainer _scenes;
 
     private void OnEnable()
     {
@@ -50,12 +50,12 @@ public class PauseController : MonoBehaviour
     private void Restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        _scenes.GameScene.LoadScene();
     }
 
     private void OpenMenuScene()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(3);
+        _scenes.MenuScene.LoadScene();
     }
 }

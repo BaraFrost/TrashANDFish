@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using Data;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -13,30 +11,30 @@ public class MenuController : MonoBehaviour
     [SerializeField]
     private Button _settingsButton;
 
+    [SerializeField]
+    private ScenesContainer _scenesContainer;
+
     private void OnEnable()
     {
         _shopButton.onClick.AddListener(OpenShopScene);
         _playButton.onClick.AddListener(OpenPlayScene);
-        _settingsButton.onClick.AddListener(OpenSettingsScene);
+      //  _settingsButton.onClick.AddListener(OpenSettingsScene);
     }
 
     private void OnDisable()
     {
         _shopButton.onClick.RemoveListener(OpenShopScene);
         _playButton.onClick.RemoveListener(OpenPlayScene);
-        _settingsButton.onClick.RemoveListener(OpenSettingsScene);
+      //  _settingsButton.onClick.RemoveListener(OpenSettingsScene);
     }
 
     private void OpenShopScene()
     {
-        SceneManager.LoadScene(2);
+        _scenesContainer.ShopScene.LoadScene();
     }
+
     private void OpenPlayScene()
     {
-        SceneManager.LoadScene(1);
-    }
-    private void OpenSettingsScene()
-    {
-        SceneManager.LoadScene(3);
+        _scenesContainer.GameScene.LoadScene();
     }
 }
