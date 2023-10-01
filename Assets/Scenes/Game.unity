@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -173,18 +173,18 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.4
-      inSlope: 0.6
-      outSlope: 0.6
+      value: 0.3
+      inSlope: 0.3
+      outSlope: 0.3
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 0.6
-      outSlope: 0.6
+      value: 0.6
+      inSlope: 0.3
+      outSlope: 0.3
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -193,8 +193,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _timeToMaxDifficulty: 120
-  _timeBetweenSpawn: 1.5
-  _spawnOffset: {x: 0, y: 0.4}
+  _timeBetweenSpawn: 1
+  _spawnOffset: {x: 0, y: 0.7}
   _screenSettings: {fileID: 11400000, guid: 4ff34025227ce1d4495f5e037b4c88e6, type: 2}
   _currentTime: 0
 --- !u!1 &554051000
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e8908a02bed6aa469ff526498b9ea58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.35
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e8908a02bed6aa469ff526498b9ea58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e8908a02bed6aa469ff526498b9ea58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.02
+      value: -4.62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0e8908a02bed6aa469ff526498b9ea58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -698,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2380487399455879165, guid: e17e2163fe27f6040b9dd17e43ca5b79, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 2380487399455879165, guid: e17e2163fe27f6040b9dd17e43ca5b79, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1025,6 +1025,10 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 1605798784}
+    - target: {fileID: 6528163700935031181, guid: 98e62f4f84d7f1e41993ba6ad7ffcffc, type: 3}
+      propertyPath: _descentRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6583431907570510665, guid: 98e62f4f84d7f1e41993ba6ad7ffcffc, type: 3}
       propertyPath: _joystick
       value: 

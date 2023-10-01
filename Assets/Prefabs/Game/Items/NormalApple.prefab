@@ -133,6 +133,6 @@ MonoBehaviour:
   _type: 0
   _score: 10
   _healthModifier: 5
-  _speedRange: {x: 5, y: 7}
+  _speedRange: {x: 12, y: 15}
   _itemRadius: 0
   _size: 1

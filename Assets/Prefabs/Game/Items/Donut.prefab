@@ -160,10 +160,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dbb5c50e34db947894c5d33c3d2e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 1
   _score: 20
   _healthModifier: 15
-  _speedRange: {x: 7, y: 9}
+  _speedRange: {x: 12, y: 15}
   _itemRadius: 0
   _size: 0
 --- !u!1 &9130622055267011213

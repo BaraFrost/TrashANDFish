@@ -80,8 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   _score: 0
-  _healthModifier: -20
-  _speedRange: {x: 13, y: 15}
+  _healthModifier: -15
+  _speedRange: {x: 15, y: 17}
   _itemRadius: 0
   _size: 0
 --- !u!1 &907124672970781490

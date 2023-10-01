@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   _score: 0
-  _healthModifier: -20
-  _speedRange: {x: 5, y: 8}
+  _healthModifier: -10
+  _speedRange: {x: 15, y: 17}
   _itemRadius: 0
   _size: 1
