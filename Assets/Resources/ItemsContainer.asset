@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972c3e34d0035e849926b77d1009106c, type: 3}
+  m_Name: ItemsContainer
+  m_EditorClassIdentifier: 
+  _items:
+  - _item: {fileID: 6051734753588584996, guid: a48437c358bfb0f45856fe708a38480a, type: 3}
+    _spawnWeight: 8
+    _maxItemsAtOnce: 5
+  - _item: {fileID: 2538262791626000607, guid: 7475bd47966e0b2489fdf7a29789c03a, type: 3}
+    _spawnWeight: 8
+    _maxItemsAtOnce: 5
+  - _item: {fileID: -9197112085875766259, guid: a83baa6638c39a64c89ce6f372b5aa7e, type: 3}
+    _spawnWeight: 5
+    _maxItemsAtOnce: 5
+  - _item: {fileID: 781935832513622721, guid: 0d6e2f4098c7aba438921d2e324fbba1, type: 3}
+    _spawnWeight: 10
+    _maxItemsAtOnce: 15
+  - _item: {fileID: -6961592478817750150, guid: a5a19c2a8b9cb12438f4f0fbbb18b2d1, type: 3}
+    _spawnWeight: 3
+    _maxItemsAtOnce: 1
+  - _item: {fileID: -7559669348428255459, guid: 589a124ad9ce95849b650e009461b787, type: 3}
+    _spawnWeight: 4
+    _maxItemsAtOnce: 2
+  - _item: {fileID: 4479860831893792457, guid: bb64db76684220749a53d1749d0f4e0a, type: 3}
+    _spawnWeight: 15
+    _maxItemsAtOnce: 15
+  - _item: {fileID: -2143341635455705244, guid: e43b56a8aa1c88049b773749ee5b08dc, type: 3}
+    _spawnWeight: 15
+    _maxItemsAtOnce: 15
+  - _item: {fileID: 4479860831893792457, guid: fc35257ede43a0b4d812f96014df2607, type: 3}
+    _spawnWeight: 5
+    _maxItemsAtOnce: 2
+  - _item: {fileID: -2143341635455705244, guid: b72c987ca909488448bb3bef0e881d3f, type: 3}
+    _spawnWeight: 5
+    _maxItemsAtOnce: 2
+  - _item: {fileID: 6051734753588584996, guid: e10205e174bd30c48b21bb407b801c42, type: 3}
+    _spawnWeight: 4
+    _maxItemsAtOnce: 3
+  - _item: {fileID: 2538262791626000607, guid: 8b3e018b1fb11004fbd7cd641c8bc6d8, type: 3}
+    _spawnWeight: 5
+    _maxItemsAtOnce: 1

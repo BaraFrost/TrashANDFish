@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2472666832590586287}
   - component: {fileID: 5960593633690361626}
   - component: {fileID: 2692696053642341601}
-  - component: {fileID: -7910009435881206969}
-  m_Layer: 0
+  - component: {fileID: -7559669348428255459}
+  m_Layer: 3
   m_Name: Gira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4129889996500656250}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.09389314
   m_Height: 0.18778628
@@ -111,13 +111,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 1
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_AngularDrag: 2
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
---- !u!114 &-7910009435881206969
+--- !u!114 &-7559669348428255459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4129889996500656250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de2791a97c2ee244953011e49939bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 08dbb5c50e34db947894c5d33c3d2e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deduction: 20
+  _type: 1
+  _score: 0
+  _healthModifier: -20
+  _speedRange: {x: 10, y: 12}
+  _itemRadius: 0
+  _size: 0

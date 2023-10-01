@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 920439061284626794}
   - component: {fileID: -2143341635455705244}
   m_Layer: 3
-  m_Name: Wheel
+  m_Name: BigWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 563114264677701213}
   m_LocalRotation: {x: 0.09147132, y: 0.4126005, z: 0.19616088, w: 0.8848247}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   _score: 0
-  _healthModifier: -20
+  _healthModifier: -40
   _speedRange: {x: 5, y: 8}
-  _itemRadius: 0
-  _size: 1
+  _itemRadius: 2
+  _size: 2

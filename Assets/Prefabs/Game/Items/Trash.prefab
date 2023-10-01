@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 422540775450367724}
   - component: {fileID: 3635232891435833673}
   - component: {fileID: 1555437610896829827}
-  - component: {fileID: 3587396084192371871}
+  - component: {fileID: 8750984621508179902}
   - component: {fileID: 7114579216163272617}
-  - component: {fileID: 2900737474728144459}
-  m_Layer: 0
+  - component: {fileID: 4479860831893792457}
+  m_Layer: 3
   m_Name: Trash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,20 +86,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3587396084192371871
-CapsuleCollider:
+--- !u!64 &8750984621508179902
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051302665044495446}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.011697502
-  m_Height: 0.023395007
-  m_Direction: 1
-  m_Center: {x: -0.0003307867, y: -0.00015169979, z: 0.0052691367}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 289301614986012343, guid: 942287dffac2388459c9e77775068a47, type: 3}
 --- !u!54 &7114579216163272617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,13 +110,13 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 20
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_AngularDrag: 2
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
---- !u!114 &2900737474728144459
+--- !u!114 &4479860831893792457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +125,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1051302665044495446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de2791a97c2ee244953011e49939bc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 08dbb5c50e34db947894c5d33c3d2e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deduction: 7
+  _type: 1
+  _score: 0
+  _healthModifier: -20
+  _speedRange: {x: 7, y: 10}
+  _itemRadius: 0
+  _size: 1
