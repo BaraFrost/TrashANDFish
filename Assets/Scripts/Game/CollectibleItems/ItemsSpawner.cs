@@ -39,7 +39,7 @@ namespace Game {
         private IEnumerator ItemSpawnCoroutine() {
             while (true) {
                 SpawnItem();
-                var currentTimeBetweenSpawn = DifficultyModifer * _timeBetweenSpawn;
+                var currentTimeBetweenSpawn = _timeBetweenSpawn;
                 yield return new WaitForSeconds(currentTimeBetweenSpawn);
                 _currentTime += currentTimeBetweenSpawn;
             }
@@ -52,6 +52,7 @@ namespace Game {
             }
             var positionToSpawn = Random.Range(_screenSettings.UpperLeftPoint.x + _spawnOffset.x, _screenSettings.LowerRightPoint.x - _spawnOffset.x);
             item.gameObject.transform.position = new Vector3(positionToSpawn, _screenSettings.UpperLeftPoint.y + _spawnOffset.y, _screenSettings.UpperLeftPoint.z);
+            item.gameObject.transform.eulerAngles = new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
             item.Init(_screenSettings.LowerRightPoint.y - _spawnOffset.y, _screenSettings.UpperLeftPoint.z);
         }
     }

@@ -29,6 +29,9 @@ namespace Game {
         [SerializeField]
         private Vector2 _speedRange;
 
+        [SerializeField]
+        private DestroyEffect _destroyEffect;
+
         private float _speed;
 
         public Action<CollectibleItem> onCompleted;
@@ -93,6 +96,9 @@ namespace Game {
         }
 
         public virtual void Collect() {
+            if (_destroyEffect != null) {
+                Instantiate(_destroyEffect, transform.position, Quaternion.identity);
+            }
             Complete();
         }
 

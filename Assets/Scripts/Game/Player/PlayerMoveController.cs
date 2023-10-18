@@ -4,8 +4,23 @@ namespace Game {
 
     public class PlayerMoveController : MonoBehaviour {
 
-        private Rigidbody rb;
-        public float speed = 0.5f;
+        private Rigidbody _rigidbody;
+
+        [SerializeField]
+        private float _defaultSpeed = 0.5f;
+
+        [SerializeField]
+        private float _jerkSpeed = 0.5f;
+
+        private float Speed {
+            get {
+                if (_playerAcceleration != null && _playerAcceleration.Accelerated) {
+                    return _jerkSpeed;
+                }
+                return _defaultSpeed;
+            }
+        }
+
         private Vector3 _moveVector;
 
         [SerializeField]
@@ -14,8 +29,11 @@ namespace Game {
         [SerializeField]
         private float _minVelocity;
 
+        private PlayerAcceleration _playerAcceleration;
+
         void Awake() {
-            rb = GetComponent<Rigidbody>();
+            _rigidbody = GetComponent<Rigidbody>();
+            _playerAcceleration = GetComponent<PlayerAcceleration>();
         }
 
         private void FixedUpdate() {
@@ -32,13 +50,13 @@ namespace Game {
                 return;
             }
             float rotZ = Mathf.Atan2(_moveVector.x, _moveVector.y) * Mathf.Rad2Deg;
-            rb.rotation = Quaternion.Euler(-180, 0, rotZ);
-            rb.velocity = _moveVector * speed;
+            _rigidbody.rotation = Quaternion.Euler(-180, 0, rotZ);
+            _rigidbody.velocity = _moveVector * Speed;
         }
 
         private void Break() {
-            rb.velocity = new Vector3(CalculateFloatBreakVelocity(rb.velocity.x),
-                CalculateFloatBreakVelocity(rb.velocity.y), 0);
+            _rigidbody.velocity = new Vector3(CalculateFloatBreakVelocity(_rigidbody.velocity.x),
+                CalculateFloatBreakVelocity(_rigidbody.velocity.y), 0);
         }
 
         private float CalculateFloatBreakVelocity(float value) {

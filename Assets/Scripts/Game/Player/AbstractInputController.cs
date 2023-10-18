@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Game {
 
     [RequireComponent(typeof(PlayerMoveController))]
-    public class AbstractInputController : MonoBehaviour {
+    public abstract class AbstractInputController : MonoBehaviour {
 
         protected PlayerMoveController _playerMoveController;
 

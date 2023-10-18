@@ -75,22 +75,29 @@ namespace Game {
         public void Update() {
             if (CurrentHealth > 0) {
                 CurrentHealth -= _descentRate * Time.deltaTime;
-            }
-            else {
+            } else {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+            gameObject.transform.localScale = GetSizeVector();
+            /*
             var currentSize = GetCurrentSize();
             if (_sizes[currentSize] != gameObject.transform.localScale.x) {
                 gameObject.transform.localScale = new Vector3(_sizes[currentSize], _sizes[currentSize], _sizes[currentSize]);
-            }
+            }*/
             _healthBar.value = CurrentHealth / _maxHealth;
         }
 
+        private Vector3 GetSizeVector() {
+            var size = (_sizes[Size.Big] - _sizes[Size.Small]) * CurrentHealth / _maxHealth + _sizes[Size.Small];
+            return new Vector3(size, size, size);
+        }
+
         public void ChangeHealth(float healthModifer) {
-            CurrentHealth += healthModifer;
-            if (CurrentHealth < _minHealth) {
+            if (CurrentHealth > _minHealth && CurrentHealth + healthModifer < _minHealth) {
                 CurrentHealth = _minHealth;
+                return;
             }
+            CurrentHealth += healthModifer;
         }
     }
 }
