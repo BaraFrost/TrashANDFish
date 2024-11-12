@@ -52,7 +52,9 @@ namespace Game {
             }
         }
 
-        public void PlayCollectEffects() {
+        public void PlayCollectEffects(CollectibleItem collectibleItem) {
+            var particleModule = _eatParticleSystem.main;
+            particleModule.startColor = new ParticleSystem.MinMaxGradient(collectibleItem.PrimaryColors.firstColor, collectibleItem.PrimaryColors.secondColor);
             StartCoroutine(PlayCollectEffectsCoroutine());
         }
 

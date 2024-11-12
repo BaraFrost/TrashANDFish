@@ -251,7 +251,7 @@ MonoBehaviour:
   _maxHealth: 100
   _minHealth: 10
   _healthBar: {fileID: 0}
-  _descentRate: 2
+  _descentRate: 1.7
 --- !u!114 &6528163700935031182
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ namespace Game {
         [SerializeField]
         private FishScore _score;
 
-        public Action onCollect;
+        public Action<CollectibleItem> onCollect;
 
         private void OnCollisionEnter(Collision collision) {
             if(collision.gameObject.TryGetComponent<CollectibleItem>(out var collectibleItem)) {
@@ -25,7 +25,7 @@ namespace Game {
             }
             _health.ChangeHealth(collectibleItem.GetHealthModifier());
             collectibleItem.Collect();
-            onCollect?.Invoke();
+            onCollect?.Invoke(collectibleItem);
         }
 
     }

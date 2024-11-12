@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,10 +34,12 @@ namespace Game {
         private float _currentHealth;
 
         [SerializeField]
-        private Slider _healthBar;
+        private HealthBar _healthBar;
 
         [SerializeField]
         private float _descentRate;
+
+        private Size _prevSize;
 
         private Dictionary<Size, float> _sizes = new Dictionary<Size, float>();
 
@@ -58,6 +61,8 @@ namespace Game {
             foreach (var fishSize in _fishSizes) {
                 _sizes.Add(fishSize.size, fishSize.scale);
             }
+            _prevSize = Size.Small;
+            _healthBar.ChangeSize(Size.Small);
         }
 
         public Size GetCurrentSize() {
@@ -84,7 +89,12 @@ namespace Game {
             if (_sizes[currentSize] != gameObject.transform.localScale.x) {
                 gameObject.transform.localScale = new Vector3(_sizes[currentSize], _sizes[currentSize], _sizes[currentSize]);
             }*/
-            _healthBar.value = CurrentHealth / _maxHealth;
+            var size = GetCurrentSize();
+            if (_prevSize != size) {
+                _healthBar.ChangeSize(size);
+                _prevSize = size;
+            }
+            _healthBar.SetValue(CurrentHealth / _maxHealth);
         }
 
         private Vector3 GetSizeVector() {

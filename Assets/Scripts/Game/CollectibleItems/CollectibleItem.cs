@@ -14,6 +14,12 @@ namespace Game {
         Big,
     }
 
+    [Serializable]
+    public struct ColorPair {
+        public Color firstColor;
+        public Color secondColor;
+    }
+
     public class CollectibleItem : MonoBehaviour {
 
         [SerializeField]
@@ -32,15 +38,15 @@ namespace Game {
         [SerializeField]
         private DestroyEffect _destroyEffect;
 
+        [SerializeField]
+        private ColorPair _primaryColors;
+        public ColorPair PrimaryColors => _primaryColors;
+
         private float _speed;
 
         public Action<CollectibleItem> onCompleted;
 
         private float _minYPosition;
-
-        /* [SerializeField]
-         private float _pushingForce;
-         public float PushingForce => _pushingForce;*/
 
         [SerializeField]
         private float _itemRadius;
@@ -53,23 +59,17 @@ namespace Game {
 
         private float _startZPosition;
 
+        private float _speedModifer;
+
         private void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
         }
 
-        public void Init(float minYPosition, float startZPosition) {
+        public virtual void Init(float minYPosition, float startZPosition, float speedModifer) {
             _minYPosition = minYPosition;
             _startZPosition = startZPosition;
-        }
-
-        /*  private void OnCollisionEnter(Collision collision) {
-              if (collision.gameObject.TryGetComponent<CollectibleItem>(out var collisionItem)) {
-                  _rigidbody.AddForce((-collisionItem.gameObject.transform.position + gameObject.transform.position).normalized * collisionItem.PushingForce, ForceMode.Impulse);
-              }
-          }*/
-
-        private void OnEnable() {
-            _speed = UnityEngine.Random.Range(_speedRange.x, _speedRange.y);
+            _speedModifer = speedModifer;
+            _speed = UnityEngine.Random.Range(_speedRange.x, _speedRange.y) * _speedModifer;
         }
 
         private void FixedUpdate() {
@@ -96,13 +96,17 @@ namespace Game {
         }
 
         public virtual void Collect() {
-            if (_destroyEffect != null) {
-                Instantiate(_destroyEffect, transform.position, Quaternion.identity);
-            }
+            showDestroyEffect();
             Complete();
         }
 
-        private void Complete() {
+        private void showDestroyEffect() {
+            if (_destroyEffect != null) {
+                Instantiate(_destroyEffect, transform.position, Quaternion.identity);
+            }
+        }
+
+        protected void Complete() {
             onCompleted?.Invoke(this);
         }
     }

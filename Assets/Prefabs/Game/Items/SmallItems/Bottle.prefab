@@ -83,6 +83,9 @@ MonoBehaviour:
   _healthModifier: -5
   _speedRange: {x: 25, y: 27}
   _destroyEffect: {fileID: 0}
+  _primaryColors:
+    firstColor: {r: 0.19607845, g: 0.13333334, b: 0.1254902, a: 1}
+    secondColor: {r: 0.32941177, g: 0.32941177, b: 0.18431373, a: 1}
   _itemRadius: 0
   _size: 0
 --- !u!1 &2741940768197725287

@@ -70,7 +70,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _timeToMaxDifficulty: 120
-  _timeBetweenSpawn: 0.7
+  _timeBetweenSpawn: 0.4
   _spawnOffset: {x: 0, y: 0.7}
   _screenSettings: {fileID: 11400000, guid: 4ff34025227ce1d4495f5e037b4c88e6, type: 2}
   _currentTime: 0

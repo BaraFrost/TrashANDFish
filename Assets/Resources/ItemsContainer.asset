@@ -19,7 +19,7 @@ MonoBehaviour:
   - _item: {fileID: 2538262791626000607, guid: 7475bd47966e0b2489fdf7a29789c03a, type: 3}
     _spawnWeight: 10
     _maxItemsAtOnce: 8
-  - _item: {fileID: -9197112085875766259, guid: a83baa6638c39a64c89ce6f372b5aa7e, type: 3}
+  - _item: {fileID: 2381753589087961000, guid: a83baa6638c39a64c89ce6f372b5aa7e, type: 3}
     _spawnWeight: 7
     _maxItemsAtOnce: 8
   - _item: {fileID: 781935832513622721, guid: 0d6e2f4098c7aba438921d2e324fbba1, type: 3}
